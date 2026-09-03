@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>খালেদা আহমদ নূরানীয়া হাফিজিয়া মাদ্রাসা ও এতিমখানা</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-green: #014138;
+            --dark-green: #002d27;
+            --accent-yellow: #f1b01c;
+            --light-green-bg: #eaf4f1;
+            --card-bg: #f5f9f8;
+            --text-color: #222222;
+            --white: #ffffff;
+            --border-color: #d1e3df;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Hind Siliguri', sans-serif;
+        }
+
+        body {
+            background-color: #f8faf9;
+            color: var(--text-color);
+            direction: ltr;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .top-bar-left, .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-bar-tagline {
+            color: var(--accent-yellow);
+            font-weight: 600;
+        }
+
+        /* Main Nav */
+        .navbar {
+            background: var(--white);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-yellow);
+            font-size: 24px;
+        }
+
+        .logo-text h1 {
+            font-size: 18px;
+            color: var(--primary-green);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 15px;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-green);
+            border-bottom: 2px solid var(--primary-green);
+            padding-bottom: 2px;
+        }
+
+        /* Hero Banner */
+        .hero-section {
+            background: linear-gradient(rgba(1, 65, 56, 0.8), rgba(1, 65, 56, 0.85)), url('https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=1200') center/cover;
+            color: var(--white);
+            padding: 40px 5%;
+            position: relative;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .badge-pill {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 15px;
+            border-radius: 20px;
+            font-size: 13px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        .hero-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .hero-location {
+            font-size: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-quote {
+            font-size: 18px;
+            color: #e2f1ed;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-yellow {
+            background: var(--accent-yellow);
+            color: #000;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+        }
+
+        /* Profile Cards Right */
+        .profile-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 35px;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .profile-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-yellow);
+            object-fit: cover;
+            background: #fff;
+        }
+
+        .profile-info h4 {
+            font-size: 14px;
+            color: var(--accent-yellow);
+        }
+
+        .profile-info h3 {
+            font-size: 15px;
+            margin: 2px 0;
+        }
+
+        .profile-info p {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 15px;
+            padding: 25px 5%;
+            background: var(--white);
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px 10px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-green);
+        }
+
+        .feature-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-size: 20px;
+        }
+
+        .feature-card h4 {
+            font-size: 14px;
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+
+        /* Quran & Hadith Section */
+        .content-container {
+            padding: 30px 5%;
+        }
+
+        .section-header {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 25px 0 25px 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .verses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .verse-card {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .verse-icon {
+            font-size: 28px;
+            color: var(--primary-green);
+        }
+
+        .verse-content {
+            flex-grow: 1;
+        }
+
+        .arabic-text {
+            font-family: 'Amiri', serif;
+            font-size: 20px;
+            color: var(--primary-green);
+            direction: rtl;
+            text-align: right;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .bengali-translation {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .source-tag {
+            font-size: 12px;
+            color: #666;
+            text-align: right;
+        }
+
+        /* About Section Layout */
+        .about-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+            background: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 30px;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .about-list {
+            list-style: none;
+        }
+
+        .about-list li {
+            font-size: 14px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .about-list li i {
+            color: var(--primary-green);
+        }
+
+        .about-img-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-img-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        /* 3-Column Middle Grid */
+        .middle-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .admission-card {
+            background: var(--primary-green);
+            color: var(--white);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .admission-card .badge {
+            background: var(--accent-yellow);
+            color: #000;
+            font-weight: 700;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 13px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .admission-card h2 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--accent-yellow);
+        }
+
+        .admission-date {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin: 15px 0;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-download {
+            background: transparent;
+            border: 1px solid var(--white);
+            color: var(--white);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .card-box {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 15px;
+            padding: 20px;
+        }
+
+        .card-box h3 {
+            color: var(--primary-green);
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-box p {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .gallery-thumbs {
+            display: flex;
+            gap: 10px;
+        }
+
+        .gallery-thumbs img {
+            width: 50%;
+            height: 90px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        /* Bottom Grid Section */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .teachers-box {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .teachers-box img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .quote-box {
+            background: #f0fdf4;
+            border-left: 4px solid var(--primary-green);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .quote-box p {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary-green);
+            margin-bottom: 5px;
+        }
+
+        .quote-box span {
+            font-size: 12px;
+            color: #666;
+        }
+
+        /* Stats Counter Bar */
+        .stats-bar {
+            background: var(--primary-green);
+            color: var(--white);
+            padding: 20px 5%;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 15px;
+            text-align: center;
+            align-items: center;
+        }
+
+        .stat-item h3 {
+            font-size: 24px;
+            color: var(--accent-yellow);
+        }
+
+        .stat-item p {
+            font-size: 13px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark-green);
+            color: var(--white);
+            padding: 30px 5% 15px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 2fr 1.5fr;
+            gap: 30px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .footer-socials a {
+            width: 32px;
+            height: 32px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 14px;
+        }
+
+        .copyright-bar {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-container, .about-section, .middle-grid, .bottom-grid, .verses-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-bar {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-links {
+                display: none; /* Can be toggled with JS */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span><i class="fa-solid fa-location-dot"></i> গল্পপন্দী, নকলা, শেরপুর | মাদ্রাসা গল্পপন্দী বাজারের সাথে</span>
+        </div>
+        <div class="top-bar-right">
+            <span class="top-bar-tagline">“কুরআনের আলোয় গড়ি আগামী”</span>
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <i class="fa-solid fa-bars" style="cursor: pointer;" onclick="toggleMenu()"></i>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo-area">
+            <div class="logo-img">
+                <i class="fa-solid fa-book-quran"></i>
+            </div>
+            <div class="logo-text">
+                <h1>খালেদা আহমদ নূরানীয়া<br>হাফিজিয়া মাদ্রাসা ও এতিমখানা</h1>
+                <p>গল্পপন্দী, নকলা, শেরপুর।</p>
+            </div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#" class="active">হোম</a></li>
+            <li><a href="#">আমাদের সম্পর্কে</a></li>
+            <li><a href="#">ভর্তি তথ্য</a></li>
+            <li><a href="#">পাঠ্যক্রম</a></li>
+            <li><a href="#">ছাত্র-ছাত্রী</a></li>
+            <li><a href="#">গ্যালারি</a></li>
+            <li><a href="#">যোগাযোগ</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-section">
+        <div class="hero-container">
+            <div>
+                <div class="hero-badges">
+                    <span class="badge-pill">ইলম</span>
+                    <span class="badge-pill">তাকওয়া</span>
+                    <span class="badge-pill">নেককার মানুষ</span>
+                </div>
+                <h1 class="hero-title">খালেদা আহমদ নূরানীয়া<br>হাফিজিয়া মাদ্রাসা ও এতিমখানা</h1>
+                <p class="hero-location"><i class="fa-solid fa-location-dot"></i> গল্পপন্দী, নকলা, শেরপুর। মাদ্রাসা গল্পপন্দী বাজারের সাথে।</p>
+                <p class="hero-quote">“কুরআন-হাদিসের আলোয় গড়ে উঠুক সুন্দর, নৈতিক ও আদর্শ মানুষ”</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-yellow"><i class="fa-solid fa-folder-open"></i> ভর্তি তথ্য</a>
+                    <a href="#" class="btn-outline">আমাদের সম্পর্কে <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="profile-cards">
+                <div class="profile-card">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150" alt="Muhtamim" class="profile-img">
+                    <div class="profile-info">
+                        <h4>মুহতামিম</h4>
+                        <h3>হাফেজ মাওলানা মুফতি আমানিউল্লাহ সাহেব</h3>
+                        <p><i class="fa-solid fa-phone"></i> +8801977810172</p>
+                    </div>
+                </div>
+                <div class="profile-card">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150" alt="Noorani Huzur" class="profile-img">
+                    <div class="profile-info">
+                        <h4>নূরানী হুজুর</h4>
+                        <h3>মুফতী মোঃ শাকিল আহমাদ</h3>
+                        <p><i class="fa-solid fa-phone"></i> 01981336733</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-book-quran"></i></div>
+            <h4>কুরআন ও হাদিস ভিত্তিক শিক্ষা</h4>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-book-open"></i></div>
+            <h4>নূরানী পদ্ধতিতে নাজেরা ও হিফজ</h4>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <h4>দক্ষ ও অভিজ্ঞ ওস্তাদগণ</h4>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-bowl-food"></i></div>
+            <h4>মানসম্মত ও পুষ্টিকর খাবার</h4>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-house"></i></div>
+            <h4>এতিমদের জন্য বিশেষ ব্যবস্থা</h4>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4>নিরাপদ ও সুশৃঙ্খল পরিবেশ</h4>
+        </div>
+    </div>
+
+    <div class="content-container">
+        <div class="section-header">
+            <i class="fa-solid fa-kaaba"></i> কুরআন ও হাদিসের বাণী
+        </div>
+
+        <div class="verses-grid">
+            <div class="verse-card">
+                <div class="verse-icon"><i class="fa-solid fa-book-quran"></i></div>
+                <div class="verse-content">
+                    <p class="arabic-text">اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ</p>
+                    <p class="bengali-translation">“পড় তোমার রবের নামে, যিনি সৃষ্টি করেছেন।”</p>
+                    <p class="source-tag">— (সূরা আলাক, ১)</p>
+                </div>
+            </div>
+            <div class="verse-card">
+                <div class="verse-icon"><i class="fa-solid fa-mosque"></i></div>
+                <div class="verse-content">
+                    <p class="arabic-text">وَمَا خَلَقْتُ الْجِنَّ وَالْإِنسَ إِلَّا لِيَعْبُدُونِ</p>
+                    <p class="bengali-translation">“আমি জিন ও মানবকে সৃষ্টি করিনি শুধু আমার ইবাদতের জন্য।”</p>
+                    <p class="source-tag">— (সূরা আয-যারিয়াত, ৫৬)</p>
+                </div>
+            </div>
+            <div class="verse-card">
+                <div class="verse-icon"><i class="fa-solid fa-book-open"></i></div>
+                <div class="verse-content">
+                    <p class="arabic-text">طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ</p>
+                    <p class="bengali-translation">“জ্ঞান অর্জন করা প্রত্যেক মুসলমানের জন্য ফরজ।”</p>
+                    <p class="source-tag">— (ইবনে মাজাহ, ২২৪)</p>
+                </div>
+            </div>
+            <div class="verse-card">
+                <div class="verse-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                <div class="verse-content">
+                    <p class="arabic-text">مَنْ سَلَكَ طَرِيقًا يَلْتَمِسُ فِيهِ عِلْمًا سَهَّلَ اللَّهُ لَهُ طَرِيقًا إِلَى الْجَنَّةِ</p>
+                    <p class="bengali-translation">“যে ব্যক্তি জ্ঞানের জন্য পথ চলবে, আল্লাহ তার জন্য জান্নাতের পথ সহজ করে দেবেন।”</p>
+                    <p class="source-tag">— (মুসলিম, ২৬৯৯)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <div class="about-text">
+                <div class="section-header">
+                    <i class="fa-solid fa-circle-info"></i> আমাদের সম্পর্কে
+                </div>
+                <p>“খালেদা আহমদ নূরানীয়া হাফিজিয়া মাদ্রাসা ও এতিমখানা ১৯৯৬ সালে প্রতিষ্ঠিত। এটি একটি ঐতিহ্যবাহী ও সুশৃঙ্খল ইসলামিক শিক্ষা প্রতিষ্ঠান। এখানে কুরআন-হাদিসের আলোকে নূরানী পদ্ধতিতে শিক্ষার পাশাপাশি দ্বীনি শিক্ষা থেকে শুরু করে নাজেরা, হিফজ এবং আলিম পর্যন্ত শিক্ষা প্রদান করা হয়।”</p>
+                <ul class="about-list">
+                    <li><i class="fa-solid fa-circle-check"></i> হিফজেদ্ব ও আলিম বিভাগ</li>
+                    <li><i class="fa-solid fa-circle-check"></i> নূরানী পদ্ধতি</li>
+                    <li><i class="fa-solid fa-circle-check"></i> সিসিটিভি ও নিরাপত্তা ব্যবস্থা</li>
+                    <li><i class="fa-solid fa-circle-check"></i> প্রতিভাবান ছাত্রদের ও ছাত্রু</li>
+                    <li><i class="fa-solid fa-circle-check"></i> শিক্ষার্থীদের জন্য উন্নত মানের খাবারের ব্যবস্থা</li>
+                </ul>
+            </div>
+            <div class="about-img-box">
+                <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&q=80&w=400" alt="Quran Decorative Art">
+            </div>
+        </div>
+
+        <div class="middle-grid">
+            <div class="admission-card">
+                <h2>২০২৬ শিক্ষাবর্ষে ভর্তি চলছে</h2>
+                <span class="badge">প্লে, নার্সারি থেকে ৩য় শ্রেণি পর্যন্ত</span>
+                <p>নাজেরা, হিফজ ও শোনানী বিভাগ</p>
+                <div class="admission-date">
+                    <i class="fa-solid fa-calendar-days"></i> ভর্তি শুরু: ১৫ ডিসেম্বর ২০২৫
+                </div>
+                <button class="btn-download"><i class="fa-solid fa-download"></i> ভর্তি ফরম ডাউনলোড</button>
+            </div>
+
+            <div class="card-box">
+                <h3><i class="fa-solid fa-trophy"></i> ছাত্রদের সফলতা ও প্রতিযোগিতা</h3>
+                <p>নিয়মিত কুরআন তেলাওয়াত, হিফজুল কুরআন, নাজেরা ও বিভিন্ন বিষয়ে প্রতিযোগিতা অনুষ্ঠিত হয়। এখানে ছাত্রদের জন্য রয়েছে বিশেষ পুরস্কার ও সম্মাননা।</p>
+                <div class="gallery-thumbs">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=200" alt="Students Studying">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80&w=200" alt="Prize Giving">
+                </div>
+            </div>
+
+            <div class="card-box">
+                <h3><i class="fa-solid fa-utensils"></i> পুষ্টিকর ও মানসম্মত খাবার</h3>
+                <p>প্রতিদিন শিক্ষার্থীদের জন্য পরিষ্কার-পরিচ্ছন্ন পরিবেশে আনন্দদায়ক খাবার সরবরাহ করা হয়।</p>
+                <div class="gallery-thumbs" style="margin-bottom: 15px;">
+                    <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&q=80&w=400" alt="Food" style="width: 100%;">
+                </div>
+                <button class="btn-download" style="color: var(--primary-green); border-color: var(--primary-green);"><i class="fa-solid fa-utensils"></i> খাবারের মেনু দেখুন</button>
+            </div>
+        </div>
+
+        <div class="bottom-grid">
+            <div class="card-box">
+                <h3><i class="fa-solid fa-user-large"></i> আমাদের ওস্তাদগণ</h3>
+                <div class="teachers-box">
+                    <p style="font-size: 13px; color: #555;">আমাদের সকল শিক্ষক/ওস্তাদগণ মহান আল্লাহর সন্তুষ্টির জন্য নিবেদিত, তারা অত্যন্ত দক্ষ, সুশিক্ষিত ও আদর্শ-আখলাকওয়ালা। তাদের তত্ত্বাবধানে ছাত্ররা মনোযোগ সহকারে পড়াশোনা করে।</p>
+                </div>
+            </div>
+
+            <div class="quote-box">
+                <p>“এতিম শিশুর সাথে রয়েছে একটি উজ্জ্বল ভবিষ্যৎ, সঠিক শিক্ষা ও ভালো পরিবেশ তাদের গড়ে নিতে পারে ইসলামের পথে।”</p>
+                <span>— প্রতিষ্ঠানের কমিটি</span>
+            </div>
+
+            <div class="card-box">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                    <h3 style="margin: 0;"><i class="fa-solid fa-camera"></i> গ্যালারি</h3>
+                    <a href="#" style="font-size: 12px; color: var(--primary-green);">সব দেখুন <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="gallery-thumbs">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=150" alt="Gallery 1">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=150" alt="Gallery 2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="stats-bar">
+        <div class="stat-item">
+            <p>প্রতিষ্ঠিত</p>
+            <h3>১৯৯৬</h3>
+        </div>
+        <div class="stat-item">
+            <p>শিক্ষার্থী সংখ্যা</p>
+            <h3>২০০+</h3>
+        </div>
+        <div class="stat-item">
+            <p>শিক্ষক/ওস্তাদগণ</p>
+            <h3>১৫+</h3>
+        </div>
+        <div class="stat-item">
+            <p>এতিম ছাত্র</p>
+            <h3>৩০+</h3>
+        </div>
+        <div class="stat-item" style="font-size: 12px;">
+            <p><i class="fa-solid fa-location-dot"></i> গল্পপন্দী, নকলা, শেরপুর</p>
+            <p>মাদ্রাসা গল্পপন্দী বাজারের সাথে</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>খালেদা আহমদ নূরানীয়া হাফিজিয়া মাদ্রাসা ও এতিমখানা</h3>
+                <p style="font-size: 12px; color: #ccc; margin-top: 5px;">গল্পপন্দী, নকলা, শেরপুর।</p>
+            </div>
+            <div style="text-align: center;">
+                <p>“কুরআনের আলোয় জন্ম হোক একটি প্রতিভাবান জাতি, একটি ছাত্রের আলোর পথ।”</p>
+            </div>
+            <div>
+                <p><strong>যোগাযোগ</strong></p>
+                <p><i class="fa-solid fa-phone"></i> +880 1XXX-XXXXXX</p>
+                <p><i class="fa-solid fa-location-dot"></i> গল্পপন্দী, নকলা, শেরপুর</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" style="background: var(--accent-yellow); color: #000;"><i class="fa-solid fa-arrow-up"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-bar">
+            <span>© ২০২৫ খালেদা আহমদ নূরানীয়া হাফিজিয়া মাদ্রাসা ও এতিমখানা। সর্বস্বত্ব সংরক্ষিত।</span>
+            <span>ইসলামের পথে, সবার জন্য</span>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            if (nav.style.display === 'flex') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'flex';
+                nav.style.flexDirection = 'column';
+                nav.style.position = 'absolute';
+                nav.style.top = '70px';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.background = '#fff';
+                nav.style.padding = '20px';
+                nav.style.boxShadow = '0 5px 10px rgba(0,0,0,0.1)';
+            }
+        }
+    </script>
+</body>
+</html>
